@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title User Dashboard
+    link(rel="stylesheet", href="/css/styles.css")  <!-- Linking to the styles.css -->
+  body
+    h1 Welcome to your Dashboard, #{user.username}
+
+    h2 Your Generated Images
+    ul
+      each image in images
+        li
+          img(src=image.imageUrl, alt="Generated Image")
+          p Prompt: #{image.prompt}
+          p Generated At: #{image.generatedAt}
+
+    a(href="/generate-image") Generate New Image
